@@ -1,0 +1,39 @@
+html, body {
+    padding: 0;
+    text-align: center;
+  }
+
+
+body{
+    font-family: "gamer GamegirlClassic-9MVj<"; 
+    font-size: 20px;
+    background-image: url("https://64.media.tumblr.com/86c13dec7f8bdc6a0fdea4cfb1255a63/tumblr_ok3oo10P3q1rnbw6mo1_1280.gifv");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100px;
+    padding-top: 50px;
+    display:flex; 
+    justify-content: space-evenly;   
+ }
+
+
+ body img{ 
+    width: 500px;
+ }
+
+ button {
+    font-family:fantasy;
+    font-size: 35px;
+    color:white;
+    margin: 180px;
+    background-color: black; 
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-decoration: none;
+    padding:20px 20px 20px 20px 20px;
+    box-shadow: 200px;
+    border-radius: 5px;
+  
+}

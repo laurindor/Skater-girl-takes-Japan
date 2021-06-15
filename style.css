@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'gamegirl';
+    src: url("styles/GamegirlClassic-9MVj.ttf");
+}
+
+
+html, body {
+    padding: 0;
+    text-align: center;
+  }
+
+
+body{
+    font-family: "gamegirl"; 
+    font-size: 20px;
+    background-image: url("https://images.hdqwalls.com/download/8-bit-city-m2-2560x1440.jpg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100px;
+    padding-top: 50px;
+ }
+
+
+ .game-page {
+    font-family:fantasy;
+    font-size: 60px;
+    color:white; 
+ }
+
+ .game-page img{
+
+    width: 200px;
+ }
+  
+button {
+    font-family: 'gamegirl';
+    font-size: 30px;
+    color: rgb(11, 157, 206);
+    background-color: rgb(21, 248, 210); 
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-decoration:wavy;
+    padding:10px 30px 10px 30px;
+    box-shadow: 200px;
+    border-radius: 5px;
+}
+
+
