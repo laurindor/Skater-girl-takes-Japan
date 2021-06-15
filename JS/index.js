@@ -27,11 +27,30 @@ window.onload = ()=>{
         x: canvas.width / 2 - 400,
         y: canvas.height / 2 - 0,
         height: 250,
-        width: 200,
+        width: 200, //I need gravity here? I read it somewhere 
         draw: function(){
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
-        }        
+        } 
+
     }
+
+    window.addEventListener("keydown", jump); //how I make her come back to the floor? XDD
+    function jump(event) {
+		switch (event.keyCode) {
+			case 32:
+				if (Player.y > 0) {
+					Player.y -= 300 ;
+				} else {
+                    Player.y -= -300;
+					
+				}
+				break;
+
+			default:
+				break;
+		}
+	}
+
 
     let ghostImg = new Image();
     ghostImg.src = "img/ghost.png"
@@ -43,13 +62,17 @@ window.onload = ()=>{
         height: 100,
         width: 100,
         draw: function(){
-            
-            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         },
-        /*move: function() {
+
+        move (){
+            this.y += 2 - -100 
+        }
            
-        }*/
-    }
+     }
+    
+
+
 
     let sakuraImg = new Image();
     sakuraImg.src = "img/sakura.png"
@@ -85,25 +108,24 @@ window.onload = ()=>{
         /*move: function() {
             
         }*/
+    }
 
-    
-    function startGame(){
+    function startGame() { //superloooooop!!!!!!!!!
         gameInterval = requestAnimationFrame(startGame);
         console.log = ("Start!!");
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         Background.draw();
         Player.draw();
         Ghost.draw();
+        //Ghost.move(); this doesn't work
         Sakura.draw();
-        Dog.draw(); 
-        objects.forEach(object=>{
-            object.draw()
-            object.move() 
-        })
-
+        //Sakura.move(); this doesn't work
+        Dog.draw();
+        //Dog.move(); this doesn't work
+       
     }
     
-   // window.addEventListener("keydown", jump);
+  //
 
    /* function player(event){
         if (event.target.localName != 'input') {//this prevents for the default use of the up/down arrows to affect the use when in game.

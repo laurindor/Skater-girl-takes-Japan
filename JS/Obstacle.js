@@ -45,6 +45,6 @@ class Dog{
         this.height = 50;
     }
     draw(){
-        this.ctx.drawImage(bookTwoImg,this.x, this.y, this.width, this.height);
+        this.ctx.drawImage(dogImg,this.x, this.y, this.width, this.height);
     }
 };

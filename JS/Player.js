@@ -8,6 +8,8 @@ class Player {
       this.y = 340;
       this.width = 250;
       this.height = 250;
+      this.gravity = 0.05;
+      this.gravitySpeed = 0;
     }
   
     draw () {
