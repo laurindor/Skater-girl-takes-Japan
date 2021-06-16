@@ -2,7 +2,6 @@ window.onload = ()=>{
     
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
-   
     let gameInterval= null;
 
     let bgImg = new Image();
@@ -20,36 +19,34 @@ window.onload = ()=>{
     };
 
     let playerImg = new Image();
-    playerImg.src = "img/player.png";
+    playerImg.src = "img/Player2.png";
     
     const Player = {
         image: playerImg,
         x: canvas.width / 2 - 400,
         y: canvas.height / 2 - 0,
         height: 250,
-        width: 200, //I need gravity here? I read it somewhere 
+        width: 200, //do I need gravity and velocity? 
         draw: function(){
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         } 
-
     }
 
-    window.addEventListener("keydown", jump); //how I make her come back to the floor? XDD
+    window.addEventListener("keydown", jump); //this isn't actually jumping...
     function jump(event) {
 		switch (event.keyCode) {
 			case 32:
-				if (Player.y > 0) {
+				if (Player.y > 1) {
 					Player.y -= 300 ;
 				} else {
                     Player.y -= -300;
-					
 				}
 				break;
-
-			default:
+			default: //ask this
 				break;
 		}
 	}
+
 
 
     let ghostImg = new Image();
@@ -65,14 +62,11 @@ window.onload = ()=>{
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         },
 
-        move (){
-            this.y += 2 - -100 
+        move(){
+            this.x += -4
+        } 
         }
-           
-     }
     
-
-
 
     let sakuraImg = new Image();
     sakuraImg.src = "img/sakura.png"
@@ -87,9 +81,9 @@ window.onload = ()=>{
             
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         },
-        /*move: function() {
-          
-        }*/
+        move(){
+            this.x += -7
+        }
     }
 
     let dogImg = new Image();
@@ -98,16 +92,16 @@ window.onload = ()=>{
     const Dog = {
         image : dogImg,
         x: canvas.width / 2 - -400,
-        y: canvas.height / 2 - -150,
+        y: canvas.height / 2 - -160,
         height: 80,
         width: 80,
         draw: function(){
             
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         },
-        /*move: function() {
-            
-        }*/
+        move(){
+            this.x += -5.5
+        }
     }
 
     function startGame() { //superloooooop!!!!!!!!!
@@ -117,29 +111,31 @@ window.onload = ()=>{
         Background.draw();
         Player.draw();
         Ghost.draw();
-        //Ghost.move(); this doesn't work
+        Ghost.move();
         Sakura.draw();
-        //Sakura.move(); this doesn't work
-        Dog.draw();
-        //Dog.move(); this doesn't work
+        Sakura.move();
+        Dog.draw(); 
+        Dog.move(); 
        
     }
     
-  //
+    const obstaclesArray = ["Ghost", "Sakura", "Dog"]
 
-   /* function player(event){
-        if (event.target.localName != 'input') {//this prevents for the default use of the up/down arrows to affect the use when in game.
-            switch (event.keyCode) {
-                
-                case 32: //up
-                    event.preventDefault();//this prevents the default arrow key behavior
-                    if (player.y > 0) {
-                        player.y -= 25;
-                    } else {
-                        player.y = 0; 
-                    }
-                    break
-    }*/
+    setInterval(function() {
+
+        //obstaclesArray.push
+        //obstaclesArray.repeat(count)
+        
+
+    })
+
+    //function shock (player, obstacle??
+
+
+
+    //scoring  
+
 
     startGame()
-}
+ }
+
