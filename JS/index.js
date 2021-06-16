@@ -26,7 +26,7 @@ window.onload = ()=>{
         x: canvas.width / 2 - 400,
         y: canvas.height / 2 - 0,
         height: 250,
-        width: 200, //do I need gravity and velocity? 
+        width: 200, //do I need gravity and velocity? about jumping...
         draw: function(){
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         } 
@@ -42,11 +42,10 @@ window.onload = ()=>{
                     Player.y -= -300;
 				}
 				break;
-			default: //ask this
+			default: //ask this???
 				break;
 		}
 	}
-
 
 
     let ghostImg = new Image();
@@ -100,7 +99,7 @@ window.onload = ()=>{
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         },
         move(){
-            this.x += -5.5
+            this.x += -5
         }
     }
 
@@ -119,21 +118,25 @@ window.onload = ()=>{
        
     }
     
-    const obstaclesArray = ["Ghost", "Sakura", "Dog"]
 
-    setInterval(function() {
+    
+    let randomObstacle
+    let obstaclesArray = []
+    let obstacle =[]
 
-        //obstaclesArray.push
-        //obstaclesArray.repeat(count)
-        
+    setInterval(function() { //this doesn't work WHYYYY
+       
+        obstaclesArray = [Ghost, Sakura, Dog] 
+        randomObstacle = obstaclesArray[(Math.random() * obstaclesArray.length)] 
+        obstacle.push(randomObstacle);
 
-    })
+    },)
 
-    //function shock (player, obstacle??
+    //function shock (player, obstacle??) - if game over show page "game over"
 
 
 
-    //scoring  
+    //scoring 
 
 
     startGame()
