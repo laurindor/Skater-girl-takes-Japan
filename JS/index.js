@@ -3,6 +3,7 @@ window.onload = ()=>{
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     let gameInterval= null;
+    
 
     let bgImg = new Image();
     bgImg.src = "img/blossom.png"
@@ -24,10 +25,10 @@ window.onload = ()=>{
     const Player = {
         image: playerImg,
         x: canvas.width / 2 - 400,
-        y: canvas.height / 2 - 0,
-        height: 250,
-        width: 200,
-        gravity: 0.02, 
+        y: canvas.height / 2 -300,
+        height: 220,
+        width: 220,
+        gravity: 0.2, 
         speed: 0.01, 
         startingy: canvas.height/2, 
         draw: function(){
@@ -76,7 +77,7 @@ window.onload = ()=>{
         },
 
         move(){
-            this.x += -4
+            this.x += -2
             if (this.x <= 0) {
                 this.x = 600
             }
@@ -136,28 +137,25 @@ window.onload = ()=>{
         randomObstacle = obstaclesArray[Math.floor(Math.random() * obstaclesArray.length)] 
         obstacle.push(randomObstacle);
 
-    },3000) //time in seconds 
+    },5000) //time in seconds 
 
-    function checkCollision(player, obstacle) {
+        function crashingTime (player, oneObst) {
 		let crash =
-			player.x < obstacle.x + obstacle.width &&
-			player.x + car.width > obstacle.x &&
-			player.y < obstacle.y + obstacle.height &&
-			player.y + player.height > obstacle.height;
-		console.log(crash);
-		if (crash) {
-			cancelAnimationFrame(gameInterval);
-			alert('crashed!');
-			window.location.reload();
-		} else {
-			console.log('not crashing');
-		}
+			player.x < oneObst.x + oneObst.width &&
+			player.x + player.width > oneObst.x &&
+			player.y < oneObst.y + oneObst.height &&
+			player.y + player.height > oneObst.height;
+            if (crash) {
+                cancelAnimationFrame(gameInterval)
+                alert('Game Over');
+                window.location.reload();
+            }
+		
 	}
 
 
     function startGame() { //superloooooop!!!!!!!!!
         gameInterval = requestAnimationFrame(startGame);
-        console.log = ("Start!!");
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         Background.draw();
         Player.draw();
@@ -171,7 +169,8 @@ window.onload = ()=>{
         obstacle.forEach(oneObst=> {
             oneObst.draw()
             oneObst.move()
-        }) 
+            crashingTime(Player, oneObst)
+        });
        
     }
     
