@@ -28,11 +28,12 @@ window.onload = ()=>{
         y: canvas.height / 2 -300,
         height: 220,
         width: 220,
-        gravity: 0.2, 
-        speed: 0.01, 
+        gravity: 0.02, 
+        speed: 0.002, 
         startingy: canvas.height/2, 
         draw: function(){
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+            
         },
         move: function(){
             if(this.y <= this.startingy){
@@ -73,13 +74,14 @@ window.onload = ()=>{
         height: 80,
         width: 80,
         draw: function(){
-        ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        
         },
 
         move(){
             this.x += -2
             if (this.x <= 0) {
-                this.x = 600
+                this.x = canvas.width/2 + Math.floor(Math.random() * canvas.width)
             }
         }
     }
@@ -94,13 +96,12 @@ window.onload = ()=>{
         height: 60,
         width: 60,
         draw: function(){
-            
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         },
         move(){
-            this.x += -3
+            this.x += -4
             if (this.x <= 0) {
-                this.x = 600
+                this.x = canvas.width/2 + Math.floor(Math.random() * canvas.width)
             }
         }
     }
@@ -116,7 +117,7 @@ window.onload = ()=>{
         width: 80,
         draw: function(){
             
-            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         },
         move(){
             this.x += -3.5
@@ -137,18 +138,31 @@ window.onload = ()=>{
         randomObstacle = obstaclesArray[Math.floor(Math.random() * obstaclesArray.length)] 
         obstacle.push(randomObstacle);
 
-    },5000) //time in seconds 
+        score.points += 10;
+
+    },3000) //time in seconds 
+
+    const score = {
+		points: 0,
+		draw: function () {
+			ctx.font = '30px Arial';
+			ctx.fillStyle = 'blue';
+			ctx.fillText('Score: ' + this.points, 200, 50);
+		}
+	};
+
 
         function crashingTime (player, oneObst) {
 		let crash =
-			player.x < oneObst.x + oneObst.width &&
-			player.x + player.width > oneObst.x &&
-			player.y < oneObst.y + oneObst.height &&
-			player.y + player.height > oneObst.height;
+            player.x + player.width > oneObst.x &&
+			oneObst.x + oneObst.width > player.x &&
+			player.y + player.height > oneObst.y &&
+			oneObst.y + oneObst.height > player.y;
+
             if (crash) {
                 cancelAnimationFrame(gameInterval)
-                alert('Game Over');
-                window.location.reload();
+                alert(`your x ${player.x + player.width}, obstacle x ${oneObst.x}, your y ${player.y + player.height}, obstacle y ${oneObst.y}, Game Over!`);
+                window.location.reload(); //I rather prefer that it takes me to gameover.html, i'll do it with DOM 
             }
 		
 	}
@@ -166,22 +180,17 @@ window.onload = ()=>{
         Sakura.move();
         Dog.draw(); 
         Dog.move(); */
-        obstacle.forEach(oneObst=> {
+        obstacle.forEach(oneObst=> { 
             oneObst.draw()
             oneObst.move()
             crashingTime(Player, oneObst)
         });
-       
+        score.draw();
+        
+
     }
     
-
-
-    //function shock (player, obstacle??) - if game over show page "game over"
-
-
-
-    //scoring 
-
+    //if game over show page "game over"
 
     startGame()
  }
