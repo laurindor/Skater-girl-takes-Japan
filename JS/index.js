@@ -161,8 +161,8 @@ window.onload = ()=>{
 
             if (crash) {
                 cancelAnimationFrame(gameInterval)
-                alert(`your x ${player.x + player.width}, obstacle x ${oneObst.x}, your y ${player.y + player.height}, obstacle y ${oneObst.y}, Game Over!`);
-                window.location.reload(); //I rather prefer that it takes me to gameover.html, i'll do it with DOM 
+                //alert(` Game Over!`);
+                window.location.href="gameover.html"; 
             }
 		
 	}
@@ -186,11 +186,9 @@ window.onload = ()=>{
             crashingTime(Player, oneObst)
         });
         score.draw();
-        
 
     }
     
-    //if game over show page "game over"
 
     startGame()
  }
