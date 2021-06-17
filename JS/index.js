@@ -70,7 +70,7 @@ window.onload = ()=>{
     const Ghost = {
         image : ghostImg,
         x: canvas.width / 2 - -300,
-        y: canvas.height / 2 - -150,
+        y: canvas.height / 2 - -160,
         height: 80,
         width: 80,
         draw: function(){
@@ -87,14 +87,14 @@ window.onload = ()=>{
     }
 
     let sakuraImg = new Image();
-    sakuraImg.src = "img/sakura.png"
+    sakuraImg.src = "img/finalfantasyobst.png"
 
     const Sakura = {
         image : sakuraImg,
         x: canvas.width / 2 - -300,
-        y: canvas.height / 2 - -200,
-        height: 60,
-        width: 60,
+        y: canvas.height / 2 - -160,
+        height: 80,
+        width: 80,
         draw: function(){
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         },
@@ -107,7 +107,7 @@ window.onload = ()=>{
     }
 
     let dogImg = new Image();
-    dogImg.src = "img/dog.png"
+    dogImg.src = "img/goomba obstacle2.png"
 
     const Dog = {
         image : dogImg,
@@ -145,9 +145,9 @@ window.onload = ()=>{
     const score = {
 		points: 0,
 		draw: function () {
-			ctx.font = '30px Arial';
-			ctx.fillStyle = 'blue';
-			ctx.fillText('Score: ' + this.points, 200, 50);
+			ctx.font = '40px Arial';
+			ctx.fillStyle = 'yellow';
+			ctx.fillText("Your score: " + this.points, 10, 50); 
 		}
 	};
 
@@ -161,7 +161,6 @@ window.onload = ()=>{
 
             if (crash) {
                 cancelAnimationFrame(gameInterval)
-                //alert(` Game Over!`);
                 window.location.href="gameover.html"; 
             }
 		

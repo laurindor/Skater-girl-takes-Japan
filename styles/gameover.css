@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 html, body {
     padding: 0;
     text-align: center;
@@ -5,35 +7,53 @@ html, body {
 
 
 body{
-    font-family: "gamer GamegirlClassic-9MVj<"; 
-    font-size: 20px;
+    font-family: 'Press Start 2P'; 
+    font-size: 10px;
     background-image: url("https://64.media.tumblr.com/86c13dec7f8bdc6a0fdea4cfb1255a63/tumblr_ok3oo10P3q1rnbw6mo1_1280.gifv");
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    height: 100px;
-    padding-top: 50px;
+    height:80px;
     display:flex; 
     justify-content: space-evenly;   
  }
 
 
+
+ #gameover-page {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center; 
+
+}
+
+
  body img{ 
-    width: 500px;
+    width: 300px;
+    margin:100px; 
  }
 
  button {
-    font-family:fantasy;
-    font-size: 35px;
-    color:white;
-    margin: 180px;
-    background-color: black; 
-    letter-spacing: 0.5px;
-    text-align: center;
+    font-family:'Press Start 2P';
+    font-size: 20px;
+    color:rgb(248, 248, 248);
+    outline:none; 
     text-decoration: none;
-    padding:20px 20px 20px 20px 20px;
-    box-shadow: 200px;
+    margin:100px;
+    line-height:40px; 
+    background-color: rgb(0, 0, 0); 
+    padding: 15px;
+    box-shadow: 100px;
     border-radius: 5px;
   
+}
+
+#gameover-page {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center; 
+
 }
