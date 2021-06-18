@@ -1,6 +1,6 @@
-SKATE GIRL TAKES JAPAN
-Description
-This is a version of the jumpng Dinosaur game using HTML, CSS, JS & JS Canvas.  
+SKATE GIRL TAKES JAPAN <br>
+
+This is a version of Steve the jumping Dinosaur game using HTML, CSS, JS & JS Canvas.  
 The main objective is the game is easy: avoid the obstacles by jumping.
 Use the space bar to jump and avoid the random obstacles that appear. 
 
@@ -49,7 +49,7 @@ index.js
    
 
 Links
-Trello https://trello.com/b/MNcVAU3z/game-project
-Link url https://laurindor.github.io/Skater-girl-takes-Japan/
-Link Repo  https://github.com/laurindor/Skater-girl-takes-Japan
-Slides https://slides.com/lauramarcos/deck
+Trello https://trello.com/b/MNcVAU3z/game-project <br>
+Link url https://laurindor.github.io/Skater-girl-takes-Japan/ <br>
+Link Repo  https://github.com/laurindor/Skater-girl-takes-Japan <br>
+Slides https://slides.com/lauramarcos/deck <br>
