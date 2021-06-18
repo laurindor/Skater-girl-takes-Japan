@@ -9,7 +9,7 @@ Use the space bar to jump and avoid the random obstacles that appear.
 ![Screenshot](Captura3.PNG)
 
 
-Backlog
+Backlog <br>
 Data structure
 1. index.html
 2. style.css
@@ -30,12 +30,12 @@ index.js
 
 • Creates a score 
 
-• StartGame: 
- • Creates canvas container and dimensions.
- • Generates game animation.
- • Clears the canvas.
- • Draws the background, the player and the obstacles. 
- • Handles the collission logic.
+• StartGame: <br>
+ • Creates canvas container and dimensions.<br>
+ • Generates game animation.<br>
+ • Clears the canvas.<br>
+ • Draws the background, the player and the obstacles. <br>
+ • Handles the collission logic.<br>
 
 • Set Interval: i
    • Generates a random obstacle loop.
@@ -43,7 +43,7 @@ index.js
 
 • CrashingTime: 
    
-   • Handles obstacle collision logic. When the coordenades of the player and the obstacles overlap, your game is over.
+   • Handles obstacle collision logic. When the coordenades of the player and the obstacles overlap, your game is over. <br>
    • The loop stops and it takes you to the game over page. 
 
    
