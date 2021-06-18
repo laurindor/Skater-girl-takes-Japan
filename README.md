@@ -37,12 +37,11 @@ index.js
  • Draws the background, the player and the obstacles. <br>
  • Handles the collission logic.<br>
 
-• Set Interval: i
-   • Generates a random obstacle loop.
-   • Adds points to the score 
+• Set Interval: <br>
+   • Generates a random obstacle loop.<br>
+   • Adds points to the score <br>
 
-• CrashingTime: 
-   
+• CrashingTime: <br>
    • Handles obstacle collision logic. When the coordenades of the player and the obstacles overlap, your game is over. <br>
    • The loop stops and it takes you to the game over page. 
 
