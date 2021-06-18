@@ -9,6 +9,13 @@ html, body {
   }
 
 
+  header {
+    font-size: 30px;
+    color:blueviolet;
+    margin: 100px, 
+  }
+
+
 body{
     font-family: "Press Start 2P"; 
     font-size: 15px;
